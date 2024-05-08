@@ -2,3 +2,17 @@
     margin: 0;
     padding: 0;
 }
+
+.navbar-expand{
+background-color: #e3f2fd;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    transform: scale(1.1);
+    font-weight: 500;
+}
+
+#mensaje{
+    resize: none;
+}
