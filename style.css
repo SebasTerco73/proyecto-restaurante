@@ -3,8 +3,27 @@
     padding: 0;
 }
 
-.navbar-expand{
-background-color: #e3f2fd;
+:root {
+    --main-bg-color: white;
+    --secondary-bg-color: rgb(196, 196, 196);
+    --navbar-color: #e3f2fd;
+    --footer-bg-color: rgb(51, 51, 51);
+    --font-family: sans-serif;;
+}
+
+body{
+    background-color: var(--secondary-bg-color);
+}
+
+footer{
+    width: cover;
+    height: 20%;
+    background-color: var(--footer-bg-color);
+}
+
+.navbar-expand {
+    width: cover;
+    background-color: var(--navbar-color);
 }
 
 nav a:hover {
@@ -13,6 +32,77 @@ nav a:hover {
     font-weight: 500;
 }
 
-#mensaje{
+#mensaje {
     resize: none;
 }
+
+
+#logo-main{
+    height: 50px;
+    width:auto;
+    margin-left: 10px;
+}
+
+
+.flex-container {
+    border: 2px solid black;
+    width: cover;
+    height: 60%;
+    background-color: var(--main-bg-color);
+    margin: cover;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    /*flex-wrap: wrap;*/
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.imgC {
+    height: 80%;
+    width: 20%;
+    border-radius: 3%;
+    box-shadow: 0 5px 3px rgb(0, 0, 15, .5);
+    transition-property: margin-bottom height;
+    transition-duration: .5s;
+}
+
+.imgC:hover {
+    margin-bottom: 30px;
+    /*height: 84%; */
+}
+
+
+@media (max-width: 480px) {
+    .flex-container {
+        width: 100%;
+        height: 80%;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .imgC {
+        height: 250px;
+        width: 100px;
+        border-radius: 3%;
+        box-shadow: 0 5px 3px rgb(0, 0, 15, .5);
+    }
+}
+
+/*
+@media (max-width: 575.98px) { ... }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
