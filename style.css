@@ -21,16 +21,37 @@ footer {
     background-color: var(--footer-bg-color);
 }
 
+.nav-link{
+    padding: 5px;
+    border: 3px groove #858282;
+    background-color: #494747;
+}
+
+.nav-link:active{
+    transform: scale(1.1);
+    background-color: #1f2227;
+}
+
 .navbar-expand {
     width: cover;
     background-color: var(--navbar-color);
 }
 
-nav a:hover {
-    text-decoration: underline;
-    transform: scale(1.1);
-    font-weight: 500;
+.dropdown-menu{
+    margin-left: 5px;
 }
+
+.dropdown-item:hover {
+    text-decoration: underline;
+    transform: scale(1.2);
+    font-weight: 500;
+    background-color: black;
+}
+
+.nav-item > img{
+    margin-right: 20px;
+}
+
 
 #mensaje {
     resize: none;
