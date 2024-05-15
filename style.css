@@ -14,6 +14,7 @@
 
 body {
     background-color: var(--main-bg-color);
+    justify-content: center;
 }
 
 footer {
@@ -44,10 +45,22 @@ nav a:hover {
     margin-left: 10px;
 }
 
+.section-slider-text{
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    
+}
+
+.section-text{
+    text-align: center;
+}
+
 .slider {
     overflow: hidden;
     width: 1500px;
     margin-left: 12px;
+    box-shadow: all 2px rgb(20, 20, 20);
 }
 
 .slider--inner {
