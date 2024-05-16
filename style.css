@@ -209,6 +209,17 @@ padding: 10px;
     justify-content: center;
 }
 
+.mapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+iframe{
+    box-shadow: 51px 31px 81px -4px rgba(0,0,0,0.75);
+}
+
 /*
 @media (max-width: 575.98px) { ... }
 
@@ -247,5 +258,4 @@ padding: 10px;
     padding-right: 5%;
     padding-left: 5%;
     width: 40%;
-    
 }
