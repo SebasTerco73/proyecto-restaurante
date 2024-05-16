@@ -198,6 +198,11 @@ nav{
 }
 
 /* NOSOTROS */
+#titulos{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+}
+
 #nosotros{
     background-image: url("img/mesa.jpg");
     background-size: cover;
@@ -214,5 +219,6 @@ nav{
     margin-top: 5%;
     margin-bottom: 5%;
     background-color: rgb(36, 26, 15,0.8);
+    width:70%;
         
 }
