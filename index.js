@@ -1,20 +1,49 @@
-let sliderInner = document.querySelector(".slider--inner");
+const sliderInner = document.querySelectorAll('.slider--inner');
 
-let images = document.querySelectorAll(".imgC");
+let counter = 1;
+slidefun(counter);
 
-let index = 1;
+let timer = setInterval(autoslide, 8000);
 
-setInterval(function slider() {
+function autoslide() {
+    counter += 1;
+    slidefun(counter);
+}
 
-    let percentage = index * -100;
-    sliderInner.style.transform = "translateX(" + percentage + "%)";
+function plusSlides(n) {
+    counter += n;
+    slidefun(counter);
+    resetTimer();
+}
 
-    index++;
-    if (index > (images.length - 1)) {
-        index = 0;
+function currentSilde(n) {
+    counter = n;
+    slidefun(counter);
+    resetTimer();
+}
+
+function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(autoslide, 8000);
+}
+
+function slidefun(n) {
+    for (let i = 0; i < sliderInner.length; i++) {
+        sliderInner[i].style.display = "none";
     }
 
-}, 4500);
+    if (n > sliderInner.length) {
+        counter = 1;
+    }
+
+    if (n < 1) {
+        counter = sliderInner.length;
+    }
+
+    sliderInner[counter - 1].style.display = "block";
+}
+
+//          FIN DEL SLIDE
 
 function validateForm(event){
     event.preventDefault();
