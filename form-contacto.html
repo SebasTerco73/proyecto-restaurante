@@ -83,21 +83,28 @@
                 <label for="sucursales" class="form-label mt-4 text-white">Sucursales</label>
 
                 <select class="form-select" aria-label="sucursales">
-                        <option selected>Ninguna</option>
-                        <option value="1">Sucursal 1</option>
-                        <option value="2">Sucursal 2</option>
-                        <option value="3">Sucursal 3</option>
+                        <option class="text-black" selected>Ninguna</option>
+                        <option class="text-black" value="1">Sucursal 1</option>
+                        <option class="text-black" value="2">Sucursal 2</option>
+                        <option class="text-black" value="3">Sucursal 3</option>
                 </select>
             
                 <div class="mb-3 mt-4">
                     <label for="mensaje" class="form-label text-white">Mensaje</label>
                     <textarea class="form-control" id="mensaje" rows="3"></textarea>
                 </div>
+
+                <div class="mb-3 mt-4">
+                    <label for="imagen" class="form-label text-white"> Adjuntar imagen
+                        <input type="file" class="form-control" name="imagen">
+                    </label>
+                </div>
                 <input class="btn btn-primary mb-5 mt-2" type="submit" value="Enviar">
             </form>
         </div id="form-content">
     </div>
     
+
     <footer class="text-white text-center">
         <img class="logo" src="img/logo2.png" alt="Logo resto">
     </footer>
