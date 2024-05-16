@@ -116,6 +116,55 @@ nav{
     height: 20%;
 }
 
+.logo{
+    height: 180px;
+    width: 200px;
+    padding: 10px;
+}
+/* MENU */
+.tarjetas h1 {
+    width: 90%; 
+    margin-bottom: 20px; 
+    text-decoration: underline;
+}
+
+.tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.tarjeta { 
+    margin: 10px;
+    border: 3px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    max-width: 400px;
+}
+
+.tarjeta:hover {
+    transform: scale(1.1);
+    border-color: var(--navbar-toggler-border-active);
+}
+
+.tarjeta img {
+    width: 300px;
+    height: 200px;
+}
+
+.tarjeta .menu-nombre {
+background-color: var(--secondary-bg-color);
+text-align: center;
+padding: 10px;
+}
+
+.tarjeta .menu-descripcion {
+    padding: 10px;
+}
+
 @media (max-width: 575px) { 
     /* NAVBAR */
     .navbar-toggler{
