@@ -67,9 +67,6 @@ nav{
 }
 /* FIN NAVBAR */
 
-#mensaje {
-    resize: none;
-}
 
 
 #logo-main {
@@ -165,3 +162,28 @@ nav{
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { ... }
 */
+
+
+/* FORMULARIO DE CONTACTO */
+
+#mensaje {
+    resize: none;
+}
+
+#principal{
+    background-image: url("img/restaurante.png");
+    background-size: cover;
+    backdrop-filter: blur(3px);
+    background-repeat: no-repeat;
+}
+
+#formulario{
+    border-color: rgb(63, 47, 47);
+    border-style: solid;
+    margin-top: 5%;
+    background-color: rgb(36, 26, 15,0.8);
+    padding-right: 5%;
+    padding-left: 5%;
+    width: 40%;
+    
+}
