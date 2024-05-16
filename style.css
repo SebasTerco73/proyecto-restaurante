@@ -155,10 +155,9 @@ nav{
 }
 
 .imgNos{
-    /*float: right;
-    clear: right;*/
-    width: 450px;
-    margin: 20px;
+    width: 80%;
+    margin: 10px;
+    justify-content: center;
 }
 
 /*
