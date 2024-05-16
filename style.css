@@ -199,9 +199,6 @@ nav{
 
 /* NOSOTROS */
 #nosotros{
-    width: 80%;
-    margin: 10px;
-    justify-content: center;
     background-image: url("img/mesa.jpg");
     background-size: cover;
     backdrop-filter: blur(3px);
@@ -212,9 +209,10 @@ nav{
     text-align: center;
     border-color: rgb(63, 47, 47);
     border-style: solid;
-    margin-left: 5%;
-    margin-right: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
     margin-top: 5%;
+    margin-bottom: 5%;
     background-color: rgb(36, 26, 15,0.8);
         
 }
