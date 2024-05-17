@@ -13,55 +13,82 @@
 <body>
   <nav class="navbar navbar-expand-sm">
     <div class="container-fluid">
-      <a class="navbar-brand d-none d-sm-block" href="index.html"><img src="img/logo2.png" alt="Logo" width="200" height="140" class="d-inline-block align-text-center"></a>
+      <a class="navbar-brand d-none d-sm-block" href="index.html"><img src="img/flati.png" alt="Logo" width="80" height="60" class="d-inline-block align-text-center">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active  text-light"  href="index.html">INICIO</a>
+            <a class="nav-link active  text-light"  href="index.html">INICIO</a></li>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="form-contacto.html">CONTACTO</a>
+            <a class="nav-link text-light" href="form-contacto.html">CONTACTO</a></li>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="menu.html">MENU</a>
+            <a class="nav-link text-light" href="#">MENU</a></li>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="nosotros.html">NOSOTROS</a>
+            <a class="nav-link text-light" href="nosotros.html">NOSOTROS</a></li>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="section-slider-text">
-    <section class="section-slider">
-      <div class="slider">
-        <div class="slider--inner">
-          <img class="imgC" src="img/01.jpg" alt="carne">
-          <img class="imgC" src="img/02.jpg" alt="choripan">
-          <img class="imgC" src="img/03.jpg" alt="empanadas">
-          <img class="imgC" src="img/04.jpg" alt="milanesa">
-          <img class="imgC" src="img/05.jpg" alt="pizza">
-        </div>
+  <div class="slider">
+    <div class="slider--inner fade" style="display: block;">
+      <div class="txt">
+        <h2>Carne</h2>
+        <p>¡Deliciosa!</p>
       </div>
-    </section>
-      <section class="section-text">
-        <h3> Restaurante Argentino </h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ea eos tempore laborum maxime aut ipsa aperiam! Quod consequatur laboriosam nemo cum sint accusantium temporibus, omnis ad officia natus nulla!</p>
-      </section>
+      <img class="imgC" src="img/01.jpg" alt="carne">
+    </div>
+    <div class="slider--inner fade">
+      <div class="txt">
+        <h2>Choripan</h2>
+        <p>¡Apetitoso!</p>
+      </div>
+      <img class="imgC" src="img/02.jpg" alt="choripan">
+    </div>
+    <div class="slider--inner fade">
+      <div class="txt">
+        <h2>Empanadas</h2>
+        <p>¡Riquisimas!</p>
+      </div>
+      <img class="imgC" src="img/03.jpg" alt="empanadas">
+    </div>
+    <div class="slider--inner fade">
+      <div class="txt">
+        <h2>Milanesa</h2>
+        <p>¡Sabrosa!</p>
+      </div>
+      <img class="imgC" src="img/04.jpg" alt="milanesa">
+    </div>
+    <div class="slider--inner fade">
+      <div class="txt">
+        <h2>Pizza</h2>
+        <p>¡Exquisita!</p>
+      </div>
+      <img class="imgC" src="img/05.jpg" alt="pizza">
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+    <footer class="bg-dark text-center text-white" id="footer-id"> 
+        
+    </footer>
   </div>
 
+    
 
-    <footer class="text-white text-center">
-      <img class="logo" src="img/logo2.png" alt="Logo resto">
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
     <script src="index.js"></script>
+
 </body>
+
 </html>
