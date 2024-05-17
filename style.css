@@ -346,6 +346,20 @@ iframe{
     .next {
         font-size: 15px;
     }
+
+    .slider {
+        position: relative;
+        width: 100%;
+        height: 710px;
+        background: var(--main-bg-color);
+       /* margin-top: 40px; */
+    }
+    
+    .slider--inner .imgC {
+        aspect-ratio: 8.1/10;
+        object-fit: cover;
+    }
+
 }
 
 /*  800px    */
