@@ -219,7 +219,7 @@ nav{
 
 /*      FIN DEL SLIDER      */
 
-/*  575px    */
+
 
 .logo{
     height: 180px;
@@ -275,6 +275,8 @@ iframe{
     margin-bottom: 10px;
     box-shadow: 36px 26px 29px 0px rgba(0,0,0,0.75);
 }
+
+/*  575px    */
 
 @media (min-width: 0px) and (max-width: 575px) {
 
@@ -349,27 +351,7 @@ iframe{
     .next {
         font-size: 15px;
     }
-
-    .slider {
-        position: relative;
-        width: 100%;
-        height: 710px;
-        background: var(--main-bg-color);
-       /* margin-top: 40px; */
-    }
-
-    .slider--inner{
-        height: 100%;
-        width: 100%;
-    }
-    
-    .slider--inner .imgC {
-        height: cover;
-        width: cover;
-        aspect-ratio: 8.1/10;
-        object-fit: cover;
-    }
-
+ 
 }
 
 /*  800px    */
