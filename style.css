@@ -87,6 +87,7 @@ nav{
 .slider {
     position: relative;
     width: 100%;
+    height: 80%;
     background: var(--main-bg-color);
    /* margin-top: 40px; */
 }
@@ -94,6 +95,7 @@ nav{
 .slider--inner {
     display: none;
     overflow: hidden;
+    width: 100%;
 }
 
 .slider--inner .imgC {
@@ -164,6 +166,7 @@ nav{
 
 .imgC {
     width: 100%;
+    height: 100%;
     transform: scale(1.5, 1.5);
     animation-name: zoomin;
     animation-duration: 40s;
@@ -307,7 +310,7 @@ iframe{
     /* FIN NAVBAR */
 
     .txt {
-        left: 65%;
+        left: 60%;
         animation-name: posi3;
         animation-duration: 2s;
         -webkit-animation-name: posi3;
@@ -320,7 +323,7 @@ iframe{
         }
 
         to {
-            left: 65%;
+            left: 60%;
         }
     }
 
@@ -330,7 +333,7 @@ iframe{
         }
 
         to {
-            left: 65%;
+            left: 60%;
         }
     }
 
@@ -354,8 +357,15 @@ iframe{
         background: var(--main-bg-color);
        /* margin-top: 40px; */
     }
+
+    .slider--inner{
+        height: 100%;
+        width: 100%;
+    }
     
     .slider--inner .imgC {
+        height: cover;
+        width: cover;
         aspect-ratio: 8.1/10;
         object-fit: cover;
     }
