@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     color: white;
-    font-family: sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 :root {
@@ -31,7 +31,7 @@ body {
 
 footer {
     width: 100%;
-    height: 50px;
+    height: auto;
     background-color: var(--footer-bg-color);
     text-align: center;
     font-family: var(--font-family);
@@ -77,7 +77,7 @@ nav{
 
 
 #logo-main {
-    height: 50px;
+    height: 30px;
     width: auto;
     margin-left: 10px;
 }
@@ -87,6 +87,7 @@ nav{
 .slider {
     position: relative;
     width: 100%;
+    height: 80%;
     background: var(--main-bg-color);
    /* margin-top: 40px; */
 }
@@ -94,6 +95,7 @@ nav{
 .slider--inner {
     display: none;
     overflow: hidden;
+    width: 100%;
 }
 
 .slider--inner .imgC {
@@ -164,6 +166,7 @@ nav{
 
 .imgC {
     width: 100%;
+    height: 100%;
     transform: scale(1.5, 1.5);
     animation-name: zoomin;
     animation-duration: 40s;
@@ -216,6 +219,63 @@ nav{
 
 /*      FIN DEL SLIDER      */
 
+
+
+.logo{
+    height: 180px;
+    width: 200px;
+    padding: 10px;
+}
+/* MENU */
+.tarjetas h1 {
+    width: 90%; 
+    margin-bottom: 20px; 
+    text-decoration: underline;
+}
+
+.tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.tarjeta { 
+    margin: 10px;
+    border: 3px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    max-width: 400px;
+}
+
+.tarjeta:hover {
+    transform: scale(1.1);
+    border-color: var(--navbar-toggler-border-active);
+}
+
+.tarjeta img {
+    width: 300px;
+    height: 200px;
+}
+
+.tarjeta .menu-nombre {
+background-color: var(--secondary-bg-color);
+text-align: center;
+padding: 10px;
+}
+
+.tarjeta .menu-descripcion {
+    padding: 10px;
+}
+
+iframe{
+    width: 95%;
+    margin-bottom: 10px;
+    box-shadow: 36px 26px 29px 0px rgba(0,0,0,0.75);
+}
+
 /*  575px    */
 
 @media (min-width: 0px) and (max-width: 575px) {
@@ -252,7 +312,7 @@ nav{
     /* FIN NAVBAR */
 
     .txt {
-        left: 65%;
+        left: 60%;
         animation-name: posi3;
         animation-duration: 2s;
         -webkit-animation-name: posi3;
@@ -265,7 +325,7 @@ nav{
         }
 
         to {
-            left: 65%;
+            left: 60%;
         }
     }
 
@@ -275,7 +335,7 @@ nav{
         }
 
         to {
-            left: 65%;
+            left: 60%;
         }
     }
 
@@ -291,6 +351,7 @@ nav{
     .next {
         font-size: 15px;
     }
+ 
 }
 
 /*  800px    */
@@ -354,25 +415,6 @@ nav{
     }
 }
 
-
-
-/*
-@media (max-width: 575.98px) { ... }
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) and (max-width: 767.98px) { ... }
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) and (max-width: 991.98px) { ... }
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) and (max-width: 1199.98px) { ... }
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }
-*/
-
-
 /* FORMULARIO DE CONTACTO */
 
 #mensaje {
@@ -392,9 +434,8 @@ nav{
     margin-top: 5%;
     background-color: rgb(36, 26, 15,0.8);
     padding-right: 5%;
-    padding-left: 5%;
-    width: 40%;
-    
+    padding-left: 5%; 
+    width: 45%;   
 }
 
 /* NOSOTROS */
@@ -427,4 +468,17 @@ nav{
     height: 45%;
     filter:brightness(0,75)
 
+}
+
+@media screen and (max-width:1000px){
+    #formulario{
+        width: 70%;
+    }
+}
+    
+@media screen and (max-width:700px) {
+
+#formulario{
+    width: 90%;
+}
 }
