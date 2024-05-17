@@ -428,9 +428,8 @@ iframe{
     margin-top: 5%;
     background-color: rgb(36, 26, 15,0.8);
     padding-right: 5%;
-    padding-left: 5%;
-    width: 40%;
-    
+    padding-left: 5%; 
+    width: 45%;   
 }
 
 /* NOSOTROS */
@@ -463,4 +462,17 @@ iframe{
     height: 45%;
     filter:brightness(0,75)
 
+}
+
+@media screen and (max-width:1000px){
+    #formulario{
+        width: 70%;
+    }
+}
+    
+@media screen and (max-width:700px) {
+
+#formulario{
+    width: 90%;
+}
 }
