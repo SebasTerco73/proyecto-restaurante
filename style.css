@@ -74,7 +74,10 @@ nav{
 }
 /* FIN NAVBAR */
 
-
+nav div a img {
+    width: 70px;
+    height: 60px;
+}
 
 #logo-main {
     height: 30px;
