@@ -53,10 +53,12 @@ function validateForm(event){
     let number = document.getElementById("contacto").value;
     if(!isValidEmail(email)){
         alert("Por favor ingrese un mail valido");
+        document.getElementById('email').focus();
         return false;
     }
     if(!isValidNumber(number)){
         alert("Ingrese un numero valido");
+        document.getElementById('contacto').focus();
         return false;
     }
     alert("Formulario enviado correctamente");
