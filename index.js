@@ -1,7 +1,10 @@
 const sliderInner = document.querySelectorAll('.slider--inner');
 
 let counter = 1;
-slidefun(counter);
+
+try{
+    slidefun(counter);
+}catch (TypeError){}
 
 let timer = setInterval(autoslide, 8000);
 
@@ -28,19 +31,18 @@ function resetTimer() {
 }
 
 function slidefun(n) {
-    for (let i = 0; i < sliderInner.length; i++) {
-        sliderInner[i].style.display = "none";
-    }
+        for (let i = 0; i < sliderInner.length; i++) {
+            sliderInner[i].style.display = "none";
+        }
 
-    if (n > sliderInner.length) {
-        counter = 1;
-    }
+        if (n > sliderInner.length) {
+            counter = 1;
+        }
 
-    if (n < 1) {
-        counter = sliderInner.length;
-    }
-
-    sliderInner[counter - 1].style.display = "block";
+        if (n < 1) {
+            counter = sliderInner.length;
+        }
+        sliderInner[counter - 1].style.display = "block";
 }
 
 //          FIN DEL SLIDE
@@ -71,4 +73,6 @@ function isValidNumber(number){
     return numberRegex.test(number);
 }
 
+try{
 document.getElementById("myForm").addEventListener("submit",validateForm);
+}catch (TypeError){}
