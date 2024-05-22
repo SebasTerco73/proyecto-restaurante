@@ -31,14 +31,14 @@ body {
 
 footer {
     width: 100%;
-    height: auto;
+    height: 12em;
     background-color: var(--footer-bg-color);
     text-align: center;
     font-family: var(--font-family);
 }
 
 #footer-id{
-    background-color: var(--footer-bg-color)!important;
+    background-color: var(--footer-bg-color);
 }
 
 /* NAVBAR */
@@ -90,7 +90,7 @@ nav div a img {
 .slider {
     position: relative;
     width: 100%;
-    height: 80%;
+    height: 80dvh;
     background: var(--main-bg-color);
    /* margin-top: 40px; */
 }
@@ -99,6 +99,7 @@ nav div a img {
     display: none;
     overflow: hidden;
     width: 100%;
+    height: 100%;
 }
 
 .slider--inner .imgC {
@@ -425,7 +426,7 @@ iframe{
 }
 
 #principal{
-    background-image: url("img/restaurante.png");
+    background-image: url("../img/restaurante.png");
     background-size: cover;
     backdrop-filter: blur(3px);
     background-repeat: no-repeat;
@@ -448,7 +449,7 @@ iframe{
 }
 
 #nosotros{
-    background-image: url("img/mesa.jpg");
+    background-image: url("../img/mesa.jpg");
     background-size: cover;
     backdrop-filter: blur(3px);
     background-repeat: no-repeat;
