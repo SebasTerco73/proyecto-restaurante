@@ -16,9 +16,9 @@ router.post('/', userController.crearComida);
 router.post('/', userController.crearBebida);
 
 // PUT
-router.post('/', userController.editarUsuario);
-router.post('/', userController.editarComida);
-router.post('/', userController.editarBebida);
+router.post('/:id', userController.editarUsuario);
+router.post('/:id', userController.editarComida);
+router.post('/:id', userController.editarBebida);
 
 // DELETE
 router.delete('/:id', userController.eliminarUsuario);

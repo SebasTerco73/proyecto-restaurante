@@ -4,8 +4,8 @@ const app = express();
 let port = 3000;
 app.use(express.json());
 
-//const menuRouter = require('./routes/menu.js');
-//app.use('/menu/', menuRouter);
+const menuRouter = require('./routes/menu.js');
+app.use('/menu', menuRouter);
 
 //  -------------- ROUTER --------------
 
