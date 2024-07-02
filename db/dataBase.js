@@ -4,8 +4,15 @@ const connection = mySql.createConnection(
     {
         host: 'localhost',
         user: 'root',
-        password : '',
-        database: 'usuarios'
+        password : 'ul0_QV_a42hZcrGICs6rEA',
+        database: 'restaurante'
+        
+        /*
+        host: DB_HOST,
+        user: DB_USER,
+        password : DB_PASSWORD,
+        database: DB_NAME
+        */
     }
 );
 

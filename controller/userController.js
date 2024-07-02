@@ -16,14 +16,14 @@ const obtenerTodasLasComidas = (req, res) => {
     });
 }
 
-const obtenerComidaPorNombre = (req, res) => {
+const obtenerComidaPorID = (req, res) => {
     // req.params : Recibo el parametro ID de la URL 
     // req.body : Devuelve todos los datos del body de la pág.
-    const {nombre} = req.body;
-    const sql = 'SELECT * FROM comidas WHERE comida_nombre like "%?%"';
+    const {id} = req.params;
+    const sql = 'SELECT * FROM comidas WHERE comida_id = ?';
 
     // [nombre] reemplaza al ? de la sentencia sql
-    db.query(sql, [nombre], (err, results) => {
+    db.query(sql, [id], (err, results) => {
         if (err) throw err;
 
         res.json(results);
@@ -42,11 +42,11 @@ const obtenerTodasLasBebidas = (req, res) => {
     });
 }
 
-const obtenerBebidaPorNombre = (req, res) => {
-    const {nombre} = req.body;
-    const sql = 'SELECT * FROM bebidas WHERE bebida_nombre like "%?%"';
+const obtenerBebidaPorID = (req, res) => {
+    const {id} = req.params;
+    const sql = 'SELECT * FROM bebidas WHERE bebida_id = ?';
 
-    db.query(sql, [nombre], (err, results) => {
+    db.query(sql, [id], (err, results) => {
         if (err) throw err;
 
         res.json(results);
@@ -228,9 +228,9 @@ const eliminarBebida = (req, res) => {
 module.exports = {
     // GET
     obtenerTodasLasComidas,
-    obtenerComidaPorNombre,
+    obtenerComidaPorID,
     obtenerTodasLasBebidas,
-    obtenerBebidaPorNombre,
+    obtenerBebidaPorID,
     // POST
     crearUsuario, 
     crearComida,
