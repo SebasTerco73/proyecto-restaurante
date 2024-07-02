@@ -54,6 +54,29 @@ const obtenerBebidaPorID = (req, res) => {
 }
 
 
+// ----- Usuarios ------
+const obtenerTodosLosUsuarios = (req, res) => {
+    const sql = 'SELECT * FROM usuarios';
+
+    db.query(sql, (err, results) => {
+        if (err) 
+            throw err;
+        
+        res.json(results);
+    });
+}
+
+const obtenerUsuarioPorID = (req, res) => {
+    const {id} = req.params;
+    const sql = 'SELECT * FROM usuarios WHERE usuario_id = ?';
+
+    db.query(sql, [id], (err, results) => {
+        if (err) throw err;
+
+        res.json(results);
+    });
+}
+
 
 // ----------------------------
 // --------- POST -------------
@@ -63,7 +86,7 @@ const obtenerBebidaPorID = (req, res) => {
 const crearUsuario = (req, res) => {
     const {nombre, password, email} = req.body;
 
-    const sql = 'INSERT INTO usuarios(usuario_nombre, usuario_password, usuario_email) VALUES (?,?,?)';
+    const sql = 'INSERT INTO usuarios(usuario_nombre, usuario_contraseña, usuario_email) VALUES (?,?,?)';
 
     db.query(sql,[nombre, password, email], (err, result) => {
         if(err) throw err;
@@ -121,7 +144,7 @@ const editarUsuario = (req, res) => {
     const {id} = req.params;
     const {nombre, password, email} = req.body;
 
-    const sql = 'UPDATE usuarios SET usuario_nombre = ?, usuario_password = ?, usuario_email = ? WHERE usuario_id = ?';
+    const sql = 'UPDATE usuarios SET usuario_nombre = ?, usuario_contraseña = ?, usuario_email = ? WHERE usuario_id = ?';
 
     db.query(sql, [nombre, password, email, id], (err, result) => {
         if(err) throw err;
@@ -231,6 +254,8 @@ module.exports = {
     obtenerComidaPorID,
     obtenerTodasLasBebidas,
     obtenerBebidaPorID,
+    obtenerTodosLosUsuarios,
+    obtenerUsuarioPorID,
     // POST
     crearUsuario, 
     crearComida,
