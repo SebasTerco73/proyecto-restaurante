@@ -11,17 +11,14 @@ router.get('/bebidas', userController.obtenerTodasLasBebidas);
 router.get('/bebidas/:id', userController.obtenerBebidaPorID);
 
 // POST
-router.post('/crear/usuario', userController.crearUsuario);
 router.post('/crear/comida', userController.crearComida);
 router.post('/crear/bebida', userController.crearBebida);
 
 // PUT
-router.post('/editar/usuario/:id', userController.editarUsuario);
-router.post('/editar/comida/:id', userController.editarComida);
-router.post('/editar/bebida/:id', userController.editarBebida);
+router.put('/editar/comida/:id', userController.editarComida);
+router.put('/editar/bebida/:id', userController.editarBebida);
 
 // DELETE
-router.delete('/eliminar/usuario/:id', userController.eliminarUsuario);
 router.delete('/eliminar/comida/:id', userController.eliminarComida);
 router.delete('/eliminar/bebida/:id', userController.eliminarBebida);
 
