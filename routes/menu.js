@@ -5,25 +5,25 @@ const userController = require('../controller/userController');
 // Faltan agregar las rutas especificas para que sean llamados los metodos.
 
 // GET
-router.get('/', userController.obtenerTodasLasComidas);
-router.get('/', userController.obtenerComidaPorNombre);
-router.get('/', userController.obtenerTodasLasBebidas);
-router.get('/', userController.obtenerBebidaPorNombre);
+router.get('/comidas', userController.obtenerTodasLasComidas);
+router.get('/comidas/:id', userController.obtenerComidaPorID);
+router.get('/bebidas', userController.obtenerTodasLasBebidas);
+router.get('/bebidas/:id', userController.obtenerBebidaPorID);
 
 // POST
-router.post('/', userController.crearUsuario);
-router.post('/', userController.crearComida);
-router.post('/', userController.crearBebida);
+router.post('/crear/usuario', userController.crearUsuario);
+router.post('/crear/comida', userController.crearComida);
+router.post('/crear/bebida', userController.crearBebida);
 
 // PUT
-router.post('/:id', userController.editarUsuario);
-router.post('/:id', userController.editarComida);
-router.post('/:id', userController.editarBebida);
+router.post('/editar/usuario/:id', userController.editarUsuario);
+router.post('/editar/comida/:id', userController.editarComida);
+router.post('/editar/bebida/:id', userController.editarBebida);
 
 // DELETE
-router.delete('/:id', userController.eliminarUsuario);
-router.delete('/:id', userController.eliminarComida);
-router.delete('/:id', userController.eliminarBebida);
+router.delete('/eliminar/usuario/:id', userController.eliminarUsuario);
+router.delete('/eliminar/comida/:id', userController.eliminarComida);
+router.delete('/eliminar/bebida/:id', userController.eliminarBebida);
 
 
 module.exports = router;
