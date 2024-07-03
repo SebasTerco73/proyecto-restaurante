@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controller/userController');
 
-// Faltan agregar las rutas especificas para que sean llamados los metodos.
-
 // GET
 router.get('/comidas', userController.obtenerTodasLasComidas);
 router.get('/comidas/:id', userController.obtenerComidaPorID);

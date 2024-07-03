@@ -210,7 +210,7 @@ const eliminarUsuario = (req, res) => {
         res.json(
             {
                 mensaje: "usuario ELIMINADO",
-                idUsuario : result.insertId
+                idUsuario : id
             });
     })
 }
@@ -226,7 +226,7 @@ const eliminarComida = (req, res) => {
         res.json(
             {
                 mensaje: "comida ELIMINADA",
-                idComida : result.insertId
+                idComida : id
             });
     })
 }
@@ -242,7 +242,7 @@ const eliminarBebida = (req, res) => {
         res.json(
             {
                 mensaje: "bebida ELIMINADA",
-                idBebida : result.insertId
+                idBebida : id
             });
     })
 }
