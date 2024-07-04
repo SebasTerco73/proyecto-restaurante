@@ -21,26 +21,26 @@ app.use('/usuarios', usuarioRouter);
 
 //PRINCIPAL
 
-router.get("/home",(req,res) => {
+app.get("/home",(req,res) => {
     res.sendFile(path.join(__dirname,'public','index.html'));
 });
-router.get("/contacto",(req,res) => {
+app.get("/contacto",(req,res) => {
     res.sendFile(path.join(__dirname,'public','form-contacto.html'));
 });
-router.get("/menu",(req,res) => {
+app.get("/menu",(req,res) => {
     res.sendFile(path.join(__dirname,'public','menu.html')); 
 });
-router.get("/nosotros",(req,res) => {
+app.get("/nosotros",(req,res) => {
     res.sendFile(path.join(__dirname,'public','nosotros.html')); 
 });
-router.get("/login",(req,res) => {
+app.get("/login",(req,res) => {
     res.sendFile(path.join(__dirname,'public','login.html'));  
 });
-
-
 
 app.listen(port, () => {
     console.log(`Servidor express ejecutandose en el puerto ${port}`);
 });
 
 //nodemon: node --watch index.js 
+
+//PARA QUE SE ACTUALICE EL ARCHIVO.
