@@ -230,9 +230,121 @@ nav div a img {
     width: 200px;
     padding: 10px;
 }
+
+/*FORM*/
+
+.hidden{
+    display: none;
+}
+
+#nuevaComidaform {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    margin: 0 10px;
+}
+
+#nuevaComidaform h2 {
+    font-size: 24px;
+    text-align: center;
+    color: #333;
+}
+
+.labelNombre{
+    width: 60%;
+}
+
+.labelPrecio{
+    width: 35%;
+}
+
+.labelDetalle{
+    width: 90%;
+}
+
+#nuevaComidaform label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+    margin-right: 15px;
+}
+
+fieldset{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+
+
+#nuevaComidaform input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: black;
+}
+
+#nuevaComidaform input[type="number"]{
+    padding: 10px;
+    width: 40%;
+    color: black;
+}
+
+#nuevaComidaform button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#nuevaComidaform button:hover {
+    background-color: #218838;
+}
+
 /* MENU */
+
+.ListaComidas {
+    display: flex; 
+    align-items: center;
+}
+
+
+.nuevaComidabtn{
+        padding: 0 10px;
+        background-image: linear-gradient(to right, #28a745, #56c150);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 2em;
+      }
+      .nuevaComidabtn:hover {
+        background-color: #45a049;
+      }
+
+      .nuevaComidabtn:active{
+        border: 1px solid #004b00;
+        transform: scale(1.1);
+      }
+
+      .nuevaComidabtn:active {
+        background-color: #3e8e41;
+      }
+
+.titulos{
+    margin: 10px;
+}
+
 .tarjetas h1 {
-    width: 90%; 
+    width: 100%; 
     margin-bottom: 20px; 
     text-decoration: underline;
 }
@@ -240,9 +352,8 @@ nav div a img {
 .tarjetas {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
-    
 }
 
 .tarjeta { 
@@ -251,10 +362,11 @@ nav div a img {
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    max-width: 400px;
+    width: 200px;
+    background-color: rgb(36, 26, 15, 0.8);
 }
 
-.tarjeta:hover {
+.tarjeta button:hover {
     transform: scale(1.1);
     border-color: var(--navbar-toggler-border-active);
 }
@@ -273,6 +385,29 @@ padding: 10px;
 .tarjeta .menu-descripcion {
     padding: 10px;
 }
+
+.tarjeta .menu-precio {
+    width: 70%;
+}
+
+.tarjeta p{
+    font-size: medium;
+    color: darkgray;
+}
+
+.action {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.eliminarComida{
+    width: 14%;
+    margin-right: 10px;
+    background-color: #24160f;
+}
+
+/* FIN MENU */
 
 iframe{
     width: 95%;

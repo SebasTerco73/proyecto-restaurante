@@ -225,7 +225,7 @@ const eliminarComida = (req, res) => {
 
         res.json(
             {
-                mensaje: "comida ELIMINADA",
+                mensaje: `Comida con id ${id} ELIMINADA`,
                 idComida : id
             });
     })
@@ -241,7 +241,7 @@ const eliminarBebida = (req, res) => {
 
         res.json(
             {
-                mensaje: "bebida ELIMINADA",
+                mensaje: `Bebida con id ${id} ELIMINADA`,
                 idBebida : id
             });
     })
