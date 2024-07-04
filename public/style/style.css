@@ -442,6 +442,20 @@ iframe{
     width: 45%;   
 }
 
+#login{
+    border-color: rgb(63, 47, 47);
+    border-style: solid;
+    background-color: rgb(36, 26, 15,0.8);
+    padding-right: 5%;
+    padding-left: 5%; 
+    width: 25%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     
+    margin-top: 5%;
+}
 /* NOSOTROS */
 #titulos{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
