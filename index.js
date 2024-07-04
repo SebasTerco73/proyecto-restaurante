@@ -16,25 +16,12 @@ app.use('/menu', menuRouter);
 const usuarioRouter = require('./routes/usuarios.js');
 app.use('/usuarios', usuarioRouter);
 
+//RUTAS DEL NAVBAR
+const principalRouter = require('./routes/principal.js');
+app.use('/',principalRouter);
+
 //  ------------------------------------
 
-//RUTAS DEL NAVBAR
-
-app.get("/home",(req,res) => {
-    res.sendFile(path.join(__dirname,'public','index.html'));
-});
-app.get("/contacto",(req,res) => {
-    res.sendFile(path.join(__dirname,'public','form-contacto.html'));
-});
-app.get("/menu",(req,res) => {
-    res.sendFile(path.join(__dirname,'public','menu.html')); 
-});
-app.get("/nosotros",(req,res) => {
-    res.sendFile(path.join(__dirname,'public','nosotros.html')); 
-});
-app.get("/login",(req,res) => {
-    res.sendFile(path.join(__dirname,'public','login.html'));  
-});
 
 app.listen(port, () => {
     console.log(`Servidor express ejecutandose en el puerto ${port}`);
