@@ -16,11 +16,27 @@ app.use('/menu', menuRouter);
 const usuarioRouter = require('./routes/usuarios.js');
 app.use('/usuarios', usuarioRouter);
 
-//RUTAS DEL NAVBAR
-const principalRouter = require('./routes/principal.js');
-app.use('/',principalRouter);
 
 //  ------------------------------------
+
+//PRINCIPAL
+
+router.get("/home",(req,res) => {
+    res.sendFile(path.join(__dirname,'public','index.html'));
+});
+router.get("/contacto",(req,res) => {
+    res.sendFile(path.join(__dirname,'public','form-contacto.html'));
+});
+router.get("/menu",(req,res) => {
+    res.sendFile(path.join(__dirname,'public','menu.html')); 
+});
+router.get("/nosotros",(req,res) => {
+    res.sendFile(path.join(__dirname,'public','nosotros.html')); 
+});
+router.get("/login",(req,res) => {
+    res.sendFile(path.join(__dirname,'public','login.html'));  
+});
+
 
 
 app.listen(port, () => {
