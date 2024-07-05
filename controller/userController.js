@@ -77,6 +77,28 @@ const obtenerUsuarioPorID = (req, res) => {
     });
 }
 
+// ----- Promocion ------
+const obtenerTodasLasPromociones = (req, res) => {
+    const sql = 'SELECT * FROM promociones';
+
+    db.query(sql, (err, results) => {
+        if (err) 
+            throw err;
+        
+        res.json(results);
+    });
+}
+
+const obtenerPromocionPorID = (req, res) => {
+    const {id} = req.params;
+    const sql = 'SELECT * FROM promociones WHERE usuario_id = ?';
+
+    db.query(sql, [id], (err, results) => {
+        if (err) throw err;
+
+        res.json(results);
+    });
+}
 
 // ----------------------------
 // --------- POST -------------
@@ -133,6 +155,22 @@ const crearBebida = (req, res) => {
     })
 }
 
+// ----- Promocion ------
+const crearPromocion = (req, res) => {
+    const {precio, comida_id, bebida_id} = req.body;
+
+    const sql = 'INSERT INTO promociones(promocion_precio, comida_id, bebida_id) VALUES (?,?,?)';
+
+    db.query(sql,[precio, comida_id, bebida_id], (err, result) => {
+        if(err) throw err;
+
+        res.json(
+            {
+                mensaje: "promocion CREADA con éxito",
+                idCarta : result.insertId
+            });
+    })
+}
 
 
 // ----------------------------
@@ -195,6 +233,23 @@ const editarBebida = (req, res) => {
     })
 }
 
+// ------ Promocion --------
+const editarPromocion = (req, res) => {
+    const {id} = req.params;
+    const {precio, comida_id, bebida_id} = req.body;
+
+    const sql = 'UPDATE promociones SET promocion_precio = ?, comida_id = ?, bebida_id = ? WHERE promocion_id = ?';
+
+    db.query(sql, [precio, comida_id, bebida_id], (err, result) => {
+        if(err) throw err;
+
+        res.json(
+            {
+                mensaje: "promocion editada",
+                idBebida : result.insertId
+            });
+    })
+}
 
 // ----------------------------
 // --------- DELETE -----------
@@ -247,6 +302,21 @@ const eliminarBebida = (req, res) => {
     })
 }
 
+const eliminarPromocion = (req, res) => {
+    const {id} = req.params;
+
+    const sql = 'DELETE FROM promociones WHERE promocion_id = ?';
+
+    db.query(sql, [id], (err, result) => {
+        if(err) throw err;
+
+        res.json(
+            {
+                mensaje: `Promocion con id ${id} ELIMINADA`,
+                idBebida : id
+            });
+    })
+}
 
 module.exports = {
     // GET
@@ -256,16 +326,21 @@ module.exports = {
     obtenerBebidaPorID,
     obtenerTodosLosUsuarios,
     obtenerUsuarioPorID,
+    obtenerTodasLasPromociones,
+    obtenerPromocionPorID,
     // POST
     crearUsuario, 
     crearComida,
     crearBebida,
+    crearPromocion,
     // PUT
     editarUsuario,
     editarComida,
     editarBebida,
+    editarPromocion,
     // DELETE
     eliminarUsuario,
     eliminarComida,
-    eliminarBebida
+    eliminarBebida,
+    eliminarPromocion
 }
