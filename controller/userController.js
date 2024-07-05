@@ -91,7 +91,7 @@ const obtenerTodasLasPromociones = (req, res) => {
 
 const obtenerPromocionPorID = (req, res) => {
     const {id} = req.params;
-    const sql = 'SELECT * FROM promociones WHERE usuario_id = ?';
+    const sql = 'SELECT * FROM promociones WHERE promocion_id = ?';
 
     db.query(sql, [id], (err, results) => {
         if (err) throw err;
@@ -240,7 +240,7 @@ const editarPromocion = (req, res) => {
 
     const sql = 'UPDATE promociones SET promocion_precio = ?, comida_id = ?, bebida_id = ? WHERE promocion_id = ?';
 
-    db.query(sql, [precio, comida_id, bebida_id], (err, result) => {
+    db.query(sql, [precio, comida_id, bebida_id, id], (err, result) => {
         if(err) throw err;
 
         res.json(
