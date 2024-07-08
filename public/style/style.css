@@ -223,16 +223,157 @@ nav div a img {
 
 /*      FIN DEL SLIDER      */
 
-
-
 .logo{
     height: 180px;
     width: 200px;
     padding: 10px;
 }
+
+/*FORM*/
+
+.hidden{
+    display: none;
+}
+
+.cabeceraForm{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cerrarBtn{
+    background-color: #333;
+    color: lightgray;
+    width: 40px;
+    
+}
+
+.cerrarBtn:hover{
+    background-color: black;
+    transform: scale(1.1);
+}
+
+form legend button{
+    width: 20%;
+}
+
+form h3{
+    color: var(--main-bg-color);
+}
+
+#nuevaComidaform, #actualizarComidaform,
+#nuevaBebidaform, #actualizarBebidaform {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    margin: 0 10px;
+}
+
+#nuevaComidaform h2, #actualizarComidaform h2,
+#nuevaBebidaform h2, #actualizarBebidaform h2{
+    font-size: 24px;
+    text-align: center;
+    color: #333;
+}
+
+.labelNombre{
+    width: 60%;
+}
+
+.labelPrecio{
+    width: 35%;
+}
+
+.labelDetalle{
+    width: 90%;
+}
+
+#nuevaComidaform label, #actualizarComidaform label,
+#nuevaBebidaform label, #actualizarBebidaform label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+    margin-right: 15px;
+}
+
+fieldset{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+#nuevaComidaform input[type="text"], #actualizarComidaform input[type="text"],
+#nuevaBebidaform input[type="text"], #actualizarBebidaform input[type="text"]{
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: black;
+}
+
+#nuevaComidaform input[type="number"], #actualizarComidaform input[type="number"],
+#nuevaBebidaform input[type="number"], #actualizarBebidaform input[type="number"]{
+    padding: 10px;
+    width: 40%;
+    color: black;
+}
+
+#nuevaComidaform .boton, #actualizarComidaform .boton,
+#nuevaBebidaform .boton, #actualizarBebidaform .boton {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#nuevaComidaform .boton:hover, #actualizarComidaform .boton:hover,
+#nuevaBebidaform .boton:hover, #actualizarBebidaform .boton:hover {
+    background-color: #218838;
+}
+
 /* MENU */
+
+.ListaComidas, .ListaBebidas {
+    display: flex; 
+    align-items: center;
+}
+
+
+.nuevaComidabtn,
+.nuevaBebidabtn{
+        padding: 0 10px;
+        background-image: linear-gradient(to right, #28a745, #56c150);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 2em;
+    }
+
+    .nuevaComidabtn:hover,
+    .nuevaBebidabtn:hover {
+        background-color: #45a049;
+    }
+
+      .nuevaComidabtn:active,
+      .nuevaBebidabtn:active{
+        border: 1px solid #004b00;
+        transform: scale(1.1);
+        background-color: #3e8e41;
+      }
+
+    .titulos{
+     margin: 10px;
+    }
+
 .tarjetas h1 {
-    width: 90%; 
+    width: 100%; 
     margin-bottom: 20px; 
     text-decoration: underline;
 }
@@ -240,9 +381,8 @@ nav div a img {
 .tarjetas {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
-    
 }
 
 .tarjeta { 
@@ -250,29 +390,61 @@ nav div a img {
     border: 3px solid var(--border-color);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border-radius: 10px;
-    max-width: 400px;
-}
+    min-width: 200px;
+    background-color: rgb(36, 26, 15, 0.8);
+} 
 
-.tarjeta:hover {
+.tarjeta button:hover {
     transform: scale(1.1);
     border-color: var(--navbar-toggler-border-active);
 }
 
-.tarjeta img {
-    width: 300px;
-    height: 200px;
-}
-
-.tarjeta .menu-nombre {
+.tarjeta .menu-nombre,
+.tarjeta .bebida-nombre {
 background-color: var(--secondary-bg-color);
 text-align: center;
 padding: 10px;
 }
 
-.tarjeta .menu-descripcion {
+.tarjeta .menu-descripcion,
+.tarjeta .bebida-contieneAlcohol {
     padding: 10px;
 }
+
+.tarjeta .menu-precio,
+.tarjeta .bebida-precio {
+    width: 100%;
+}
+
+.tarjeta p{
+    font-size: medium;
+    color: darkgray;
+}
+
+.action {
+    display: flex;
+    justify-content: space-between;
+}
+
+.eliminarComida,
+.eliminarBebida{
+    width: 20%;
+    margin-right: 10px;
+    background-color: #24160f;
+}
+
+.actualizarComida,
+.actualizarBebida{
+    margin-left: 5px;
+    width: 65%;
+    margin-right: 10px;
+    background-color: #24160f;
+}
+
+
+/* FIN MENU */
 
 iframe{
     width: 95%;

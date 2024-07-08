@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-let port = 4000;
+let port = 3000;
 app.use(express.json());
 
 
