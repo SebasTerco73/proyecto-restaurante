@@ -123,13 +123,18 @@ const crearUsuario = (req, res) => {
 
 // ----- Comida ------
 const crearComida = (req, res) => {
-    const {nombre, detalle, precio} = req.body;
+    const {nombre, detalle, precio, tipoComida} = req.body;
 
-    const sql = 'INSERT INTO comidas(comida_nombre, comida_detalle, comida_precio) VALUES (?,?,?)';
+    const sql = 'INSERT INTO comidas(comida_nombre, comida_detalle, comida_precio, tipocomida_id) VALUES (?,?,?,?)';
 
-    db.query(sql,[nombre, detalle, precio], (err, result) => {
-        if(err) throw err;
-
+    db.query(sql,[nombre, detalle, precio, tipoComida], (err, result) => {
+       if (err) {
+        if (err.code === 'ER_DATA_TOO_LONG') {
+          return res.status(400).json({ mensaje: 'El contenido de la comida es demasiado largo.' });
+        } else{
+            throw err
+        }
+    }
         res.json(
             {
                 mensaje: "comida CREADA con éxito",
@@ -145,8 +150,13 @@ const crearBebida = (req, res) => {
     const sql = 'INSERT INTO bebidas(bebida_nombre, bebida_conAlcohol, bebida_precio) VALUES (?,?,?)';
 
     db.query(sql,[nombre, conAlcohol, precio], (err, result) => {
-        if(err) throw err;
-
+        if (err) {
+            if (err.code === 'ER_DATA_TOO_LONG') {
+              return res.status(400).json({ mensaje: 'El contenido de la bebida es demasiado largo.' });
+            } else{
+                throw err
+            }
+        }
         res.json(
             {
                 mensaje: "bebida CREADA con éxito",
@@ -199,11 +209,11 @@ const editarUsuario = (req, res) => {
 // ------ Comida --------
 const editarComida = (req, res) => {
     const {id} = req.params;
-    const {nombre, detalle, precio} = req.body;
+    const {nombre, detalle, precio, tipoComida } = req.body;
 
-    const sql = 'UPDATE comidas SET comida_nombre = ?, comida_detalle = ?, comida_precio = ? WHERE comida_id = ?';
+    const sql = 'UPDATE comidas SET comida_nombre = ?, comida_detalle = ?, comida_precio = ?, tipoComida_id = ? WHERE comida_id = ?';
 
-    db.query(sql, [nombre, detalle, precio, id], (err, result) => {
+    db.query(sql, [nombre, detalle, precio, tipoComida, id], (err, result) => {
         if(err) throw err;
 
         res.json(

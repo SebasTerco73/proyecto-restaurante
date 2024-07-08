@@ -40,16 +40,22 @@
               <li class="nav-item">
                 <a class="nav-link text-light" href="/login">LOGIN</a>
               </li>
-              
             </ul>
           </div>
         </div>
       </nav>
+
+
       <div class="ListaComidas">
         <h1 class="titulos">Comidas</h1>
         <button id="nuevaComidabtn" class="nuevaComidabtn">+</button>
       </div>
+
       <form id="nuevaComidaform" class="hidden" enctype="multipart/form-data">
+        <legend class="cabeceraForm">
+          <h3>Agregar Comida</h3>
+          <button id="cerrarBtnAgregarComida" class="cerrarBtn" type="button">X</button>
+        </legend>
         <label class="labelNombre" for="nombreComida"> Nombre:  <input type="text" id="nombreComida" name="nombreComida"  required></label>
         <label class="labelPrecio" for="precioComida"> Precio: <input type="number" id="precioComida" name="precioComida" required></label>
         <label class="labelDetalle" for="detalleComida"> Detalle: <input type="text" id="detalleComida" name="detalleComida" required></label>
@@ -60,19 +66,70 @@
           <label for="tipoComida4">Vegano <input type="radio" id="tipoComida4" name="tipoComida" value=4 required></label>
           <label for="tipoComida4">Guarnicion <input type="radio" id="tipoComida4" name="tipoComida" value=5 required></label>
         </fieldset>
-        <button type="submit"> Crear </button>
-        
+        <button class="boton" type="submit"> Crear </button>
       </form>
+
+      <form id="actualizarComidaform" class="hidden" enctype="multipart/form-data">
+        <legend class="cabeceraForm">
+          <h3>Modificar Comida</h3>
+          <button id="cerrarBtnEditarComida" class="cerrarBtn" type="button">X</button>
+        </legend>
+        <label class="labelId" for="idComida"><input type="hidden" id="editId" name="editId"  hidden></label>
+        <label class="labelNombre" for="nombreComida"> Nombre:  <input type="text" id="editNombre" name="editNombre"  ></label>
+        <label class="labelPrecio" for="precioComida"> Precio: <input type="number" id="editPrecio" name="editPrecio" ></label>
+        <label class="labelDetalle" for="detalleComida"> Detalle: <input type="text" id="editDetalle" name="editDetalle" ></label>
+        <fieldset>
+          <label for="tipoComida1">Pastas <input type="radio" id="tipoComida1" name="editTipo" value=1 ></label>
+          <label for="tipoComida2">Carnes <input type="radio" id="tipoComida2" name="editTipo" value="2" ></label>
+          <label for="tipoComida3">Mariscos <input type="radio" id="tipoComida3" name="editTipo" value="3" ></label>
+          <label for="tipoComida4">Vegano <input type="radio" id="tipoComida4" name="editTipo" value="4" ></label>
+          <label for="tipoComida4">Otro <input type="radio" id="tipoComida4" name="editTipo" value="5" ></label>
+        </fieldset>
+        <button class="boton" type="submit"> Modificar </button>
+      </form>
+
       <div id="comidasDiv" class="tarjetas"></div>
+
    
-  </div>
-    <h1 class="titulos">Bebidas:</h1>
-    <div id="bebidasDiv" class="tarjetas">
-    </div>
-    <h1 class="titulos">Promociones:</h1>
-    <div id="promocionesDiv" class="tarjetas">
-    </div>
     
+
+
+
+    <div class="ListaBebidas">
+        <h1 class="titulos">Bebidas</h1>
+        <button id="nuevaBebidabtn" class="nuevaBebidabtn">+</button>
+      </div>
+      <form id="nuevaBebidaform" class="hidden" enctype="multipart/form-data">
+        <legend class="cabeceraForm">
+          <h3>Agregar Bebida</h3>
+          <button id="cerrarBtnAgregarBebida" class="cerrarBtn" type="button">X</button>
+        </legend>
+        <label class="labelNombre" for="nombreBebida"> Nombre:  <input type="text" id="nombreBebida" name="nombreBebida"  required></label>
+        <label class="labelPrecio" for="precioBebida"> Precio: <input type="number" id="precioBebida" name="precioBebida" required></label>
+        <fieldset>
+          <label for="contieneAlcohol1">Sin Alcohol <input type="radio" id="contieneAlcohol1" name="contieneAlcohol" value=0 required checked></label>
+          <label for="contieneAlcohol2">Con Alcohol <input type="radio" id="contieneAlcohol2" name="contieneAlcohol" value=1 required></label>
+        </fieldset>
+        <button class="boton" type="submit"> Crear </button>
+      </form>
+
+      <form id="actualizarBebidaform" class="hidden" enctype="multipart/form-data">
+        <legend class="cabeceraForm">
+          <h3>Modificar Bebida</h3>
+          <button id="cerrarBtnEditarBebida" class="cerrarBtn" type="button">X</button>
+        </legend>
+        <label class="labelId" for="idBebida"><input type="hidden" id="editIdBebida" name="editId"  hidden></label>
+        <label class="labelNombre" for="nombreBebida"> Nombre:  <input type="text" id="editNombreBebida" name="editNombre"  required></label>
+        <label class="labelPrecio" for="precioBebida"> Precio: <input type="number" id="editPrecioBebida" name="editPrecio" required></label>
+        <fieldset>
+          <label for="contieneAlcohol1">Sin Alcohol <input type="radio" id="contieneAlcohol1" name="contieneAlcohol" value=0 required checked></label>
+          <label for="contieneAlcohol2">Con Alcohol <input type="radio" id="contieneAlcohol2" name="contieneAlcohol" value=1 required></label>
+        </fieldset>
+        <button class="boton" type="submit"> Modificar </button>
+      </form>
+    <div id="bebidasDiv" class="tarjetas"></div>
+    </div>
+    </div>
     
     <footer class="text-white text-center">
         <img class="logo" src="img/logo2.png" alt="Logo resto">
