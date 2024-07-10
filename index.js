@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-let port = 3000;
+let port = 4000;
 app.use(express.json());
 
 
@@ -33,8 +33,8 @@ app.get("/menu",(req,res) => {
 app.get("/nosotros",(req,res) => {
     res.sendFile(path.join(__dirname,'public','nosotros.html')); 
 });
-app.get("/login",(req,res) => {
-    res.sendFile(path.join(__dirname,'public','login.html'));  
+app.get("/usuarios",(req,res) => {
+    res.sendFile(path.join(__dirname,'public','usuarios.html'));  
 });
 
 app.listen(port, () => {

@@ -628,6 +628,21 @@ iframe{
      
     margin-top: 5%;
 }
+
+#tabla-usuarios{
+    border-color: rgb(104, 100, 100);
+    border-style: solid;
+    background-color: rgb(0,0,0,0.8) !important;
+    /* padding-right: 5%;
+    padding-left: 5%; 
+    width: 25%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     
+    margin-top: 5%; */
+}
 /* NOSOTROS */
 #titulos{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
