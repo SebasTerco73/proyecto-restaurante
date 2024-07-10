@@ -30,4 +30,5 @@ router.delete('/bebida/:id', userController.eliminarBebida);
 router.delete('/promocion/:id', userController.eliminarPromocion);
 router.delete('/promocion/:id',userController.eliminarUsuario);
 
+
 module.exports = router;

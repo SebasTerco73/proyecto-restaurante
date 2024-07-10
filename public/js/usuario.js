@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async() => {
     async function MostrarUsuarios(){
 
         try {
-            const response = await fetch("/usuarios/");
+            const response = await fetch("/usuarios/lista");
             
             if (!response.ok){
                 throw new Error('Error al obtener los usuarios.');
@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', async() => {
             
             let number = 1;
             for (user of jsonUsers){
-            
 
                 const fila = document.createElement('tr');
                 const cellNumber = document.createElement('td');
@@ -35,11 +34,11 @@ document.addEventListener('DOMContentLoaded', async() => {
 
                 const cellNombre = document.createElement('td');
                 cellNombre.colSpan ="3"
-                cellNombre.textContent = user.nombre;
+                cellNombre.textContent = user.usuario_nombre;
                 fila.appendChild(cellNombre);
 
                 const cellCorreo = document.createElement('td');
-                cellCorreo.textContent = user.email;
+                cellCorreo.textContent = user.usuario_email;
                 fila.appendChild(cellCorreo);
 
                 //Agrego los botones
@@ -49,6 +48,7 @@ document.addEventListener('DOMContentLoaded', async() => {
                                     <button id="eliminar" type="button" class="btn btn-danger">Eliminar</button>
                 `;                  
                 fila.appendChild(botones);
+
                 datosUsuarios.appendChild(fila);
                 number = number + 1; 
             };
