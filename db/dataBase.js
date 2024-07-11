@@ -7,7 +7,12 @@ const connection = mySql.createConnection(
         host: process.env.DB_HOST,
         user: process.env.DB_USER,
         password : process.env.DB_PASSWORD,
-        database: process.env.DB_NAME
+        database: process.env.DB_NAME,
+        connectTimeout: 10000, // 10 segundos
+        acquireTimeout: 10000, // 10 segundos
+        waitForConnections: true,
+        connectionLimit: 10,
+        queueLimit: 0
     }
 );
 
