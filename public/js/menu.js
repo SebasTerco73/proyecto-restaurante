@@ -40,7 +40,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         };
         try
         {
-            const response = await fetch("/menu/comida",
+            // const response = await fetch("/menu/comida",
+            const response = await fetchWithTimeout('/menu/comida', { timeout: 10000 }),
             {
                 method: "POST",
                 headers: {
@@ -317,3 +318,16 @@ document.addEventListener('DOMContentLoaded', async () =>
         }
     };
 });
+
+async function fetchWithTimeout(resource, options = {}) {
+    const { timeout = 8000 } = options; // Tiempo de espera predeterminado de 8 segundos
+
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), timeout);
+    const response = await fetch(resource, {
+        ...options,
+        signal: controller.signal
+    });
+    clearTimeout(id);
+    return response;
+}
