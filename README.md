@@ -25,5 +25,5 @@ Front y back del proyecto estan relacionados, incluso con base de datos.
 ![DER resto](https://github.com/user-attachments/assets/e3e718d4-0acc-49b0-855c-95c4a5826dc5)
 
 ## :student: Alumnos
-| [<img src="https://avatars.githubusercontent.com/u/127888586?v=4" width=115><br><sub>Mateo Jeremias Sosa</sub>](https://github.com/Kabusnigo) |  [<img src="https://avatars.githubusercontent.com/u/70900594?v=4" width=115><br><sub>Ana Luiszaga</sub>](https://github.com/anap25) |  [<img src="https://avatars.githubusercontent.com/u/138830413?v=4" width=115><br><sub>Sebastian Matias Puche</sub>](https://github.com/SebasTerco73) | [<img src="https://avatars.githubusercontent.com/u/168875459?v=4" width=115><br><sub>.........</sub>](https://github.com/arialbitres) | 
-| :---: | :---: | :---: | :---: |
+| [<img src="https://avatars.githubusercontent.com/u/127888586?v=4" width=115><br><sub>Mateo Jeremias Sosa</sub>](https://github.com/Kabusnigo) |  [<img src="https://avatars.githubusercontent.com/u/70900594?v=4" width=115><br><sub>Ana Luiszaga</sub>](https://github.com/anap25) |  [<img src="https://avatars.githubusercontent.com/u/138830413?v=4" width=115><br><sub>Sebastian Matias Puche</sub>](https://github.com/SebasTerco73) | 
+| :---: | :---: | :---: |
