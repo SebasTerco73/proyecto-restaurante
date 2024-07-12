@@ -7,6 +7,10 @@
 Proyecto final de la cursada Codo a codo 2024 sobre un restaurante, incluyendo todos sus datos, platos, formulario de reserva.
 Front y back del proyecto estan relacionados, incluso con base de datos.
 
+![menu](https://github.com/user-attachments/assets/eff21e6c-1918-4214-8b85-bc306f76a8e6)
+
+
+
 ## :hammer: Funcionalidades del proyecto
 - `Inicio` : Una presentacion animada con nuestros mejores platos
 - `Contacto` : Un formulario para contactarnos, con validacion de datos y expreciones regex
@@ -22,6 +26,7 @@ Front y back del proyecto estan relacionados, incluso con base de datos.
 - Subida a AlwaysData
 - 4 tablas: Usuarios, comidas, bebidas, tiposComida
 - Relacion 1 a N, entre tiposComidas y comidas
+  
 ![DER resto](https://github.com/user-attachments/assets/e3e718d4-0acc-49b0-855c-95c4a5826dc5)
 
 ## :student: Alumnos
