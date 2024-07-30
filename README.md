@@ -5,9 +5,11 @@
 
 ## :pencil: Descripcion del proyecto
 Proyecto final de la cursada Codo a codo 2024 sobre un restaurante, incluyendo todos sus datos, platos, formulario de reserva.
-Front y back del proyecto estan relacionados, incluso con base de datos.
+Front y back del proyecto estan relacionados, incluso con base de datos. CRUD de comidas y bebidas, con el uso de multer para agregar archivos.
+La pagina es responsiva.
 
-![menu](https://github.com/user-attachments/assets/eff21e6c-1918-4214-8b85-bc306f76a8e6)
+![resto](https://github.com/user-attachments/assets/a04251b5-95d5-462c-87a7-4386d58119ad)
+
 
 
 
