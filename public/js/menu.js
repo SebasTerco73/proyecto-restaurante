@@ -52,24 +52,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     // Enviar formulario de crear comida
-    crearComidaForm.addEventListener('submit', async (e) =>
-    {
+    crearComidaForm.addEventListener('submit', async (e) =>{
+        
         e.preventDefault();
         const formData = new FormData(crearComidaForm);
         const nombreComida = formData.get("nombreComida");
         const precioComida = formData.get("precioComida");
         const tipoComida = formData.get("tipoComida");
         
-        const data = {
+        const data =
+        {
             //name
             nombre: nombreComida,
             precio: precioComida,
             tipoComida: tipoComida
         };
+
         try
         {
-            // const response = await fetch("/menu/comida",
-            const response = await fetchWithTimeout('/menu/comida', { timeout: 10000 }),
+            const response = await fetch("/menu/comida",
             {
                 method: "POST",
                 body: formData
@@ -82,10 +83,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             await listarComidas(); // Actualizar lista de comidas después de crear una nueva
             const lastChild = listaComidasDIV.lastElementChild;
             lastChild.scrollIntoView({ behavior: 'smooth', block: 'end' });
-        } catch (error) {
-            console.error("Error al crear la comida:", error);
-        }
-    });
+            } catch (error) {
+                console.error("Error al crear la comida:", error);
+            }
+        });
 
     // Escuchar eventos para editar comida
     listaComidasDIV.addEventListener('click', (e) =>
