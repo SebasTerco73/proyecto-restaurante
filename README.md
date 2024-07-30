@@ -8,10 +8,7 @@ Proyecto final de la cursada Codo a codo 2024 sobre un restaurante, incluyendo t
 Front y back del proyecto estan relacionados, incluso con base de datos. CRUD de comidas y bebidas, con el uso de multer para agregar archivos.
 La pagina es responsiva.
 
-![resto](https://github.com/user-attachments/assets/a04251b5-95d5-462c-87a7-4386d58119ad)
-
-
-
+![resto](https://github.com/user-attachments/assets/1ff7c873-1f81-4faf-8baa-6becc606ba9f)
 
 ## :hammer: Funcionalidades del proyecto
 - `Inicio` : Una presentacion animada con nuestros mejores platos
