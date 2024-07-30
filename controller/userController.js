@@ -1,5 +1,38 @@
 const db = require('../db/dataBase.js');
 
+// MULTER
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs'); // Importa el módulo fs para manejar archivos
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/'); // Indica la carpeta donde se guardarán los archivos
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + '-' + file.originalname); // Nombre del archivo en el disco
+    }
+});
+
+const fileFilter = (req, file, cb) => {
+    const fileTypes = /jpeg|jpg|png/;
+    const mimeType = fileTypes.test(file.mimetype.toLowerCase());
+    const extname = fileTypes.test(path.extname(file.originalname).toLowerCase());
+
+    if (mimeType && extname) {
+        return cb(null, true);
+    }
+    cb(new Error('Error: Tipo de archivo NO PERMITIDO'), false);
+};
+
+const upload = multer({
+    storage: storage,
+    fileFilter: fileFilter,
+    limits: { fileSize: 10000000 } // Ajuste del tamaño del archivo a 10MB para este ejemplo
+});
+
+
+
 // ----------------------------
 // ---------  GET -------------
 // ----------------------------
@@ -123,11 +156,13 @@ const crearUsuario = (req, res) => {
 
 // ----- Comida ------
 const crearComida = (req, res) => {
-    const {nombre, detalle, precio, tipoComida} = req.body;
+    const {nombreComida, precioComida, tipoComida} = req.body;
+    const archivo = req.file? req.file.filename: null;
 
-    const sql = 'INSERT INTO comidas(comida_nombre, comida_detalle, comida_precio, tipocomida_id) VALUES (?,?,?,?)';
+    console.log('Datos recibidos:', { nombreComida, precioComida, tipoComida, archivo });
+    const sql = 'INSERT INTO comidas(comida_nombre, comida_precio, tipocomida_id, ruta_archivo) VALUES (?,?,?,?)';
 
-    db.query(sql,[nombre, detalle, precio, tipoComida], (err, result) => {
+    db.query(sql,[nombreComida, precioComida, tipoComida, archivo], (err, result) => {
        if (err) {
         if (err.code === 'ER_DATA_TOO_LONG') {
           return res.status(400).json({ mensaje: 'El contenido de la comida es demasiado largo.' });
@@ -138,18 +173,21 @@ const crearComida = (req, res) => {
         res.json(
             {
                 mensaje: "comida CREADA con éxito",
-                idCarta : result.insertId
+                idCarta : result.insertId,
+                consultaSQL: sql,
+                parametros: [nombreComida, precioComida, tipoComida]
             });
     })
 }
 
 // ----- Bebida ------
 const crearBebida = (req, res) => {
-    const {nombre, conAlcohol, precio} = req.body;
+    const {nombreBebida, contieneAlcohol, precioBebida,} = req.body;
+    const archivo = req.file? req.file.filename: null;
 
-    const sql = 'INSERT INTO bebidas(bebida_nombre, bebida_conAlcohol, bebida_precio) VALUES (?,?,?)';
+    const sql = 'INSERT INTO bebidas(bebida_nombre, bebida_conAlcohol, bebida_precio, ruta_archivo) VALUES (?,?,?,?)';
 
-    db.query(sql,[nombre, conAlcohol, precio], (err, result) => {
+    db.query(sql,[nombreBebida, contieneAlcohol, precioBebida, archivo], (err, result) => {
         if (err) {
             if (err.code === 'ER_DATA_TOO_LONG') {
               return res.status(400).json({ mensaje: 'El contenido de la bebida es demasiado largo.' });
@@ -209,11 +247,11 @@ const editarUsuario = (req, res) => {
 // ------ Comida --------
 const editarComida = (req, res) => {
     const {id} = req.params;
-    const {nombre, detalle, precio, tipoComida } = req.body;
+    const {nombre, precio, tipoComida } = req.body;
 
-    const sql = 'UPDATE comidas SET comida_nombre = ?, comida_detalle = ?, comida_precio = ?, tipoComida_id = ? WHERE comida_id = ?';
+    const sql = 'UPDATE comidas SET comida_nombre = ?, comida_precio = ?, tipoComida_id = ? WHERE comida_id = ?';
 
-    db.query(sql, [nombre, detalle, precio, tipoComida, id], (err, result) => {
+    db.query(sql, [nombre, precio, tipoComida, id], (err, result) => {
         if(err) throw err;
 
         res.json(
@@ -352,5 +390,7 @@ module.exports = {
     eliminarUsuario,
     eliminarComida,
     eliminarBebida,
-    eliminarPromocion
+    eliminarPromocion,
+    //multer
+    upload
 }

@@ -13,10 +13,12 @@ router.get('/promocion/:id', userController.obtenerPromocionPorID);
 
 
 // POST
-router.post('/comida', userController.crearComida);
-router.post('/bebida', userController.crearBebida);
+//SOLO SE PUEDEN CREAR USUARIOS CON MULTER //ES MAS COMPLICADO editar las imagenes
+router.post('/comida',userController.upload.single('archivo'),userController.crearComida);
+router.post('/bebida',userController.upload.single('archivo'),userController.crearBebida);
+// router.post('/comida', userController.crearComida);
+// router.post('/bebida', userController.crearBebida);
 router.post('/promocion', userController.crearPromocion);
-
 
 // PUT
 router.put('/comida/:id', userController.editarComida);
@@ -29,6 +31,8 @@ router.delete('/comida/:id', userController.eliminarComida);
 router.delete('/bebida/:id', userController.eliminarBebida);
 router.delete('/promocion/:id', userController.eliminarPromocion);
 router.delete('/promocion/:id',userController.eliminarUsuario);
+
+
 
 
 module.exports = router;

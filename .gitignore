@@ -1,0 +1,38 @@
+# Node modules
+/node_modules/
+
+# Archivos de entorno
+.env
+
+# Directorios de construcción
+/dist/
+/build/
+
+# Archivos de configuración del editor
+/.vscode/
+/.idea/
+
+# Archivos de log
+*.log
+
+# Archivos temporales y cachés
+*.tmp
+*.swp
+*.cache
+
+# Archivos de base de datos
+*.sqlite
+*.db
+
+# Archivos compilados
+*.jar
+*.pyc
+*.class
+
+# Archivos de cobertura y pruebas
+coverage/
+*.spec.js
+*.test.js
+
+# Archivos de sistema
+.DS_Store

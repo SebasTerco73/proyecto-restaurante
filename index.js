@@ -1,12 +1,10 @@
 const express = require('express');
-const path = require('path');
 const app = express();
+const path = require('path');
 let port = 4000;
 app.use(express.json());
 
-
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 //  -------------- ROUTES --------------
 
@@ -41,6 +39,8 @@ app.listen(port, () => {
     console.log(`Servidor express ejecutandose en el puerto ${port}`);
 });
 
-//nodemon: node --watch index.js 
+// MULTER 
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// 
 
-//PARA QUE SE ACTUALICE EL ARCHIVO.
+//nodemon: node --watch index.js PARA QUE SE ACTUALICE EL ARCHIVO.

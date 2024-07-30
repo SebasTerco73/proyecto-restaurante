@@ -5,8 +5,33 @@ document.addEventListener('DOMContentLoaded', async () => {
     const editarComidaForm = document.getElementById("actualizarComidaform");
     const cerrarAgregarComidaBTN = document.getElementById("cerrarBtnAgregarComida");
     const cerrarEditarComidaBTN = document.getElementById("cerrarBtnEditarComida");
+    const currentImage = document.getElementById("currentImage");
+
+  
 
     await listarComidas(); // Llamar a listarComidas al cargar la página
+
+  
+    function cerrarFormularioSiClickFuera(event)
+    {
+        const editarComidaBTN = document.getElementsByClassName("actualizarComida");
+        if (!crearComidaForm.contains(event.target) && !crearComidaBTN.contains(event.target)) {
+            crearComidaForm.classList.add('hidden');
+        }
+        let clickOutsideEditBtns = true;
+        for (let btn of editarComidaBTN) {
+            if (btn.contains(event.target)) {
+                clickOutsideEditBtns = false;
+                break;
+            }
+        }
+
+        if (!editarComidaForm.contains(event.target) && clickOutsideEditBtns) {
+            editarComidaForm.classList.add('hidden');
+        }
+    }
+    
+    document.addEventListener('click', cerrarFormularioSiClickFuera);
 
     // Mostrar/ocultar formulario de crear comida
     crearComidaBTN.addEventListener('click', () => {
@@ -31,28 +56,31 @@ document.addEventListener('DOMContentLoaded', async () => {
     {
         e.preventDefault();
         const formData = new FormData(crearComidaForm);
+        const nombreComida = formData.get("nombreComida");
+        const precioComida = formData.get("precioComida");
+        const tipoComida = formData.get("tipoComida");
+        
         const data = {
             //name
-            nombre: formData.get("nombreComida"),
-            precio: formData.get("precioComida"),
-            detalle: formData.get("detalleComida"),
-            tipoComida: formData.get("tipoComida")
+            nombre: nombreComida,
+            precio: precioComida,
+            tipoComida: tipoComida
         };
         try
         {
             const response = await fetch("/menu/comida",
             {
                 method: "POST",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
+                body: formData
             });
             const result = await response.json();
             alert(result.mensaje);
+            console.log(result);
             crearComidaForm.reset();
             crearComidaForm.classList.add('hidden');
             await listarComidas(); // Actualizar lista de comidas después de crear una nueva
+            const lastChild = listaComidasDIV.lastElementChild;
+            lastChild.scrollIntoView({ behavior: 'smooth', block: 'end' });
         } catch (error) {
             console.error("Error al crear la comida:", error);
         }
@@ -64,13 +92,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (e.target.classList.contains('actualizarComida')) {
             const id = e.target.getAttribute('data-id');
             const nombre = e.target.getAttribute('data-nombre');
-            const detalle = e.target.getAttribute('data-descripcion');
             const precio = e.target.getAttribute('data-precio');
+            const imagen = e.target.getAttribute('data-archivo');
             const tipo = Number(e.target.getAttribute('data-tipo'));
             document.getElementById('editId').value = id;
             document.getElementById('editNombre').value = nombre;
-            document.getElementById('editDetalle').value = detalle;
             document.getElementById('editPrecio').value = precio;
+            currentImage.src = imagen;
             const radios = document.getElementsByName('editTipo');
             radios.forEach(radio => {
                 if (Number(radio.value) === tipo) {
@@ -91,7 +119,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         const data = {
             nombre: formData.get("editNombre") || document.querySelector(`.actualizarComida[data-id="${id}"]`).getAttribute('data-nombre'),
             precio: formData.get("editPrecio") || document.querySelector(`.actualizarComida[data-id="${id}"]`).getAttribute('data-precio'),
-            detalle: formData.get("editDetalle") || document.querySelector(`.actualizarComida[data-id="${id}"]`).getAttribute('data-descripcion'),
             tipoComida: parseInt(formData.get("editTipo"))
         };
         try {
@@ -124,13 +151,23 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             comidas.forEach(comida => {
                 const divTarjeta = document.createElement("div");
+                const tipoComidaMap = {
+                    1: 'Pastas',
+                    2: 'Carnes',
+                    3: 'Mariscos',
+                    4: 'Opción Vegana',
+                    5: 'Guarnición'
+                };
+                const imageSrc = comida.ruta_archivo ? `/uploads/${comida.ruta_archivo}` :'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUBbNf8tPjjMylsbREVGlN1Dj30k5_JVDZOg&s';
+                const tipoComida = tipoComidaMap[comida.tipocomida_id] || 'Desconocido';
                 divTarjeta.className = "tarjeta";
                 divTarjeta.innerHTML = `
                     <h3 class="menu-nombre">${comida.comida_nombre}</h3>
-                    <p class="menu-descripcion">${comida.comida_detalle}</p>
+                    <img src="${imageSrc}" class="imagenMenu" alt="Img de comida">
+                    <p>${tipoComida}
                     <h4 class="menu-precio">$${comida.comida_precio}</h4>
                     <div class="action">
-                        <button class="actualizarComida" data-id="${comida.comida_id}" data-nombre="${comida.comida_nombre}" data-descripcion="${comida.comida_detalle}" data-precio="${comida.comida_precio}" data-tipo="${comida.tipocomida_id}">Editar</button>
+                        <button class="actualizarComida" data-archivo="${imageSrc}" data-id="${comida.comida_id}" data-nombre="${comida.comida_nombre}" data-descripcion="${comida.comida_detalle}" data-precio="${comida.comida_precio}" data-tipo="${comida.tipocomida_id}">Editar</button>
                         <button class="eliminarComida" data-id="${comida.comida_id}">x</button>
                     </div>
                 `;
@@ -169,6 +206,8 @@ document.addEventListener('DOMContentLoaded', async () =>
     const editarBebidaForm = document.getElementById("actualizarBebidaform");
     const cerrarAgregarBebidaBTN = document.getElementById("cerrarBtnAgregarBebida");
     const cerrarEditarBebidaBTN = document.getElementById("cerrarBtnEditarBebida");
+    const currentImageBebida = document.getElementById('currentImageBebida');
+    
 
     cerrarAgregarBebidaBTN.addEventListener('click', ()=>
     {
@@ -181,6 +220,27 @@ document.addEventListener('DOMContentLoaded', async () =>
         });
 
     await listarBebidas() 
+
+    function cerrarFormularioBebidaSiClickFuera(event)
+    {
+        const editarBebidaBTNS = document.getElementsByClassName("actualizarBebida");
+        if (!crearBebidaForm.contains(event.target) && !crearBebidaBTN.contains(event.target)) {
+            crearBebidaForm.classList.add('hidden');
+        }
+        let clickOutsideEditBtns = true;
+        for (let btn of editarBebidaBTNS) {
+            if (btn.contains(event.target)) {
+                clickOutsideEditBtns = false;
+                break;
+            }
+        }
+
+        if (!editarBebidaForm.contains(event.target) && clickOutsideEditBtns) {
+            editarBebidaForm.classList.add('hidden');
+        }
+    }
+    
+    document.addEventListener('click', cerrarFormularioBebidaSiClickFuera);
 
   // Mostrar/ocultar formulario de crear bebida
     crearBebidaBTN.addEventListener('click', () => {
@@ -201,16 +261,16 @@ document.addEventListener('DOMContentLoaded', async () =>
         try {
             const response = await fetch("/menu/bebida", {
                 method: "POST",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
+                body: formData
             });
             const result = await response.json();
             alert(result.mensaje);
             crearBebidaForm.reset();
             crearBebidaForm.classList.add('hidden');
             await listarBebidas(); // Actualizar lista de comidas después de crear una nueva
+            const lastChild = listaBebidasDIV.lastElementChild;
+            lastChild.scrollIntoView({ behavior: 'smooth', block: 'end' });
+
         } catch (error) {
             console.error("Error al crear la bebida:", error);
         }
@@ -225,9 +285,11 @@ document.addEventListener('DOMContentLoaded', async () =>
             const nombre = e.target.getAttribute('data-nombre');
             const precio = e.target.getAttribute('data-precio');
             const tipo = Number(e.target.getAttribute('data-tipo'));
+            const imagen = e.target.getAttribute('data-archivoBebida');
             document.getElementById('editIdBebida').value = id;
             document.getElementById('editNombreBebida').value = nombre;
             document.getElementById('editPrecioBebida').value = precio;
+            currentImageBebida.src = imagen;
             const radios = document.getElementsByName('contieneAlcohol');
             radios.forEach(radio => {
                 if (Number(radio.value) === tipo) {
@@ -269,6 +331,8 @@ document.addEventListener('DOMContentLoaded', async () =>
             console.error("Error al actualizar la comida:", error);
         }
     });
+
+    //LISTAR BEBIDAS
     async function listarBebidas() 
     {
         try
@@ -279,15 +343,17 @@ document.addEventListener('DOMContentLoaded', async () =>
             divBebidas.innerHTML = "";
             bebidas.forEach(bebida =>
             {
+                const imageSrcBebida = bebida.ruta_archivo ? `/uploads/${bebida.ruta_archivo}` :'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUBbNf8tPjjMylsbREVGlN1Dj30k5_JVDZOg&s';
                 const divTarjeta = document.createElement("div");
                 divTarjeta.className = "tarjeta";
                 let tieneAlcohol = bebida.bebida_conAlcohol?"Contiene alcohol":"No contiene alcohol";
                 divTarjeta.innerHTML = `
                 <h3 class="menu-nombre">${bebida.bebida_nombre}</h3>
+                <img src="${imageSrcBebida}" class="imagenMenu" alt="Img de bebida">
                 <p class="menu-descripcion">${tieneAlcohol}</p>
                 <h4 class="menu-precio">$${bebida.bebida_precio}</h4>
                 <div class="action">
-                <button class="actualizarBebida" data-id="${bebida.bebida_id}" data-nombre="${bebida.bebida_nombre}" data-precio="${bebida.bebida_precio}" data-tipo="${bebida.bebida_conAlcohol}">Editar</button>
+                <button class="actualizarBebida" data-archivoBebida="${imageSrcBebida}" data-id="${bebida.bebida_id}" data-nombre="${bebida.bebida_nombre}" data-precio="${bebida.bebida_precio}" data-tipo="${bebida.bebida_conAlcohol}">Editar</button>
                 <button class="eliminarBebida" data-id="${bebida.bebida_id}">x</button>
                 </div>
                 `;
@@ -317,3 +383,4 @@ document.addEventListener('DOMContentLoaded', async () =>
         }
     };
 });
+

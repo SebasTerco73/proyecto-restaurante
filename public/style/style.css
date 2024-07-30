@@ -268,6 +268,7 @@ form h3{
     padding: 20px;
     width: 90%;
     margin: 0 10px;
+    overflow: auto;
 }
 
 #nuevaComidaform h2, #actualizarComidaform h2,
@@ -285,9 +286,7 @@ form h3{
     width: 35%;
 }
 
-.labelDetalle{
-    width: 90%;
-}
+
 
 #nuevaComidaform label, #actualizarComidaform label,
 #nuevaBebidaform label, #actualizarBebidaform label {
@@ -326,7 +325,8 @@ fieldset{
     color: #fff;
     border: none;
     padding: 10px;
-    width: 100%;
+    width: 50%;
+    height: 20%;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -372,6 +372,26 @@ fieldset{
      margin: 10px;
     }
 
+    .imagenMenu{
+        width: 90%;
+        height: 150px;
+        margin: 5px 10px 10px;
+        align-self: center;
+    }
+
+    .picYbtn{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    #currentImage, #currentImageBebida{
+        width: 100px;
+        height: 100px;
+        margin: 0 10%;
+    }
+
 .tarjetas h1 {
     width: 100%; 
     margin-bottom: 20px; 
@@ -392,7 +412,7 @@ fieldset{
     flex-direction: column;
     justify-content: space-between;
     border-radius: 10px;
-    min-width: 200px;
+    width: 240px;
     background-color: rgb(36, 26, 15, 0.8);
 } 
 
@@ -406,6 +426,7 @@ fieldset{
 background-color: var(--secondary-bg-color);
 text-align: center;
 padding: 10px;
+overflow: hidden;
 }
 
 .tarjeta .menu-descripcion,
