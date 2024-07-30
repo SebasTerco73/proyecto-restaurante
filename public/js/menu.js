@@ -68,7 +68,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         };
         try
         {
-            const response = await fetch("/menu/comida",
+            // const response = await fetch("/menu/comida",
+            const response = await fetchWithTimeout('/menu/comida', { timeout: 10000 }),
             {
                 method: "POST",
                 body: formData
@@ -383,4 +384,3 @@ document.addEventListener('DOMContentLoaded', async () =>
         }
     };
 });
-
