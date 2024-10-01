@@ -10,7 +10,7 @@ const connection = mySql.createConnection(
         // database: process.env.DB_NAME,
         host: 'localhost',
         user: 'root',
-        password :'Wenstone_73',
+        password :'',
         database:'restaurante' ,
         // connectTimeout: 10000, // 10 segundos
         // acquireTimeout: 10000, // 10 segundos
