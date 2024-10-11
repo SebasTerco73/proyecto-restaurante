@@ -7,6 +7,7 @@
 Proyecto final de la cursada Codo a codo 2024 sobre un restaurante, incluyendo todos sus datos, platos, formulario de reserva.
 Front y back del proyecto estan relacionados, incluso con base de datos. CRUD de comidas y bebidas, con el uso de multer para agregar archivos.
 La pagina es responsiva.
+Para iniciar: node --watch index.js
 
 ![resto](https://github.com/user-attachments/assets/1ff7c873-1f81-4faf-8baa-6becc606ba9f)
 
@@ -20,6 +21,16 @@ La pagina es responsiva.
 
 ## :heavy_check_mark: Tecnologias utilizadas
 [![My Skills](https://skillicons.dev/icons?i=js,html,css,github,mysql,npm,nodejs,postman,vscode,bootstrap,vercel)](https://skillicons.dev)
+-Js
+-Html
+-Css
+-Github
+-npm
+-nodejs
+-postman
+-vscode
+-bootstrap
+-vercel
 
 ## :gear: Base de datos
 - Subida a AlwaysData
