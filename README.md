@@ -10,6 +10,8 @@ La pagina es responsiva.
 
 Para iniciar: node --watch index.js // http://localhost:puerto/
 
+Para cerrar: ctrl + c 2 veces
+
 ![resto](https://github.com/user-attachments/assets/1ff7c873-1f81-4faf-8baa-6becc606ba9f)
 
 ## :hammer: Funcionalidades del proyecto
