@@ -12,25 +12,26 @@ Para iniciar: node --watch index.js
 ![resto](https://github.com/user-attachments/assets/1ff7c873-1f81-4faf-8baa-6becc606ba9f)
 
 ## :hammer: Funcionalidades del proyecto
-- `Inicio` : Una presentacion animada con nuestros mejores platos
-- `Contacto` : Un formulario para contactarnos, con validacion de datos y expreciones regex
-- `Menu` : Listado de nuestras comidas y bebidas, con la posibilidad de agregar, editar y eliminar
+-  `Inicio` : Una presentacion animada con nuestros mejores platos
+-  `Contacto` : Un formulario para contactarnos, con validacion de datos y expreciones regex
+-  `Menu` : Listado de nuestras comidas y bebidas, con la posibilidad de agregar, editar y eliminar
    ( :warning: suele tener fallos vercel y no cargar)
 - `Nosotros` : Informacion sobre el restaurante, incluyendo google maps con nuestra ubicacion, la mejor del mundo :heartbeat:
 - `Usuario` : Listado sobre los usuarios, con la posibilidad de agregar, editar y eliminar ( :warning: suele tener fallos vercel y no cargar)
 
 ## :heavy_check_mark: Tecnologias utilizadas
 [![My Skills](https://skillicons.dev/icons?i=js,html,css,github,mysql,npm,nodejs,postman,vscode,bootstrap,vercel)](https://skillicons.dev)
--Js
--Html
--Css
--Github
--npm
--nodejs
--postman
--vscode
--bootstrap
--vercel
+
+-  `Js`
+-  `Html`
+-  `Css`
+- `Github`
+-  `npm`
+-  `nodejs`
+-  `postman`
+-  `vscode`
+-  `bootstrap`
+-  `vercel`
 
 ## :gear: Base de datos
 - Subida a AlwaysData
