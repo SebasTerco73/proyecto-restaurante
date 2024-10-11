@@ -8,8 +8,7 @@ Proyecto final de la cursada Codo a codo 2024 sobre un restaurante, incluyendo t
 Front y back del proyecto estan relacionados, incluso con base de datos. CRUD de comidas y bebidas, con el uso de multer para agregar archivos.
 La pagina es responsiva.
 
-Para iniciar: node --watch index.js // http://localhost:puerto/
-
+Para iniciar: node --watch index.js // http://localhost:puerto/  /////
 Para cerrar: ctrl + c 2 veces
 
 ![resto](https://github.com/user-attachments/assets/1ff7c873-1f81-4faf-8baa-6becc606ba9f)
